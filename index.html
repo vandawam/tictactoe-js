@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="title">Tic Tac Toe</div>
+        <div class="logo"></div>
+        <div class="tombol">
+            <button onclick="showl()">LEADERBOARD</button>
+            <button onclick="playGame()">PLAY GAME</button>
+        </div>
+
+        <div id="leaderboard">
+            <button id="close" onclick="closel()">X</button>
+            <div class="title">LEADERBOARD</div>
+            <div class="head">
+                <div>Game</div>
+                <div>Score</div>
+                <div>Winner</div>
+            </div>
+        </div>
+
+        <div class="" id="game">
+            <div class="title">Tic Tac Toe</div>
+            <div class="head">
+                <div>XO</div>
+                <div id="turn">Player X Turn</div>
+                <div>XO</div>
+            </div>
+            <canvas id="canvas" width="300px" height="300px"></canvas>
+        </div>
+
+    </div>
+
+</body>
+<script src="script.js"></script>
+
+</html>
