@@ -15,8 +15,14 @@ function playGame() {
     Game.style.display = 'flex';
 }
 
-const canvas = document.getElementById('canvas');
-const ctx = canvas.getContext('2d');
+function backGame(){
+    Game.style.display = 'none';
+}
+
+
+
+let canvas = document.getElementById('canvas');
+let ctx = canvas.getContext('2d');
 
 const ROWS = 3;
 const cs = canvas.height
@@ -136,6 +142,33 @@ function checkGameStatus() {
             alert("It's a tie!");
         }
     }, 100);
+}
+
+function restartGame() {
+    // Reset board array to initial state
+    board = [
+        ['', '', ''],
+        ['', '', ''],
+        ['', '', '']
+    ];
+
+    // Remove the old canvas element
+    const oldCanvas = document.getElementById('canvas');
+    const newCanvas = oldCanvas.cloneNode(true);
+    oldCanvas.parentNode.replaceChild(newCanvas, oldCanvas);
+
+    // Get the new canvas context
+    canvas = newCanvas;
+    ctx = canvas.getContext('2d');
+
+    // Redraw the board on the new canvas
+    drawBoard();
+
+    // Reset the turn display
+    Turn.textContent = `Player X Turn`;
+
+    // Re-add event listener to the new canvas
+    canvas.addEventListener('click', handleClick);
 }
 
 canvas.addEventListener('click', handleClick);
